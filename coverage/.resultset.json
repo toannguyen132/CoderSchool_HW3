@@ -1,80 +1,135 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/spec/routes/events_spec.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/models/event_spec.rb": [
         1,
         null,
         1,
-        1,
-        null
-      ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/spec/rails_helper.rb": [
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
         1,
         null,
         null,
         null,
         null,
         1,
+        1,
+        4,
+        4,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null,
+        1,
+        1,
+        1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
         null,
         1,
         null,
         null,
         1,
+        1,
+        2,
+        null,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
         null,
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/environment.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/rails_helper.rb": [
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/application.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/application.rb": [
         1,
         null,
         1,
@@ -98,11 +153,11 @@
         null,
         null,
         null,
-        1,
+        null,
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/boot.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/boot.rb": [
         1,
         null,
         1,
@@ -118,7 +173,7 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/environments/test.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/environments/test.rb": [
         1,
         null,
         null,
@@ -162,7 +217,7 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/assets.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -175,7 +230,7 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/backtrace_silencers.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -184,18 +239,18 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/cookies_serializer.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/filter_parameter_logging.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/inflections.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -213,18 +268,18 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/mime_types.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/session_store.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/simple_form.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/simple_form.rb": [
         null,
         1,
         null,
@@ -391,7 +446,7 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/simple_form_bootstrap.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/simple_form_bootstrap.rb": [
         null,
         1,
         1,
@@ -542,7 +597,7 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/initializers/wrap_parameters.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -558,7 +613,7 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/config/routes.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/routes.rb": [
         1,
         1,
         null,
@@ -621,22 +676,49 @@
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/app/helpers/application_helper.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/app/helpers/events_helper.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/events_helper.rb": [
         1,
         1,
         0,
         null,
         null
       ],
-      "/Users/dtt22/code/coderschool/ruby/CoderTicket/app/helpers/tickets_helper.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/tickets_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/event.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/venue.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/category.rb": [
+        1,
+        1,
         1,
         null
       ]
     },
-    "timestamp": 1477632197
+    "timestamp": 1498751386
   }
 }
