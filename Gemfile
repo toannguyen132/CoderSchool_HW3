@@ -48,6 +48,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'simplecov', '~> 0.12.0', require: false
+  gem 'rails-controller-testing'
   gem 'guard-rspec', require: false
 end
 

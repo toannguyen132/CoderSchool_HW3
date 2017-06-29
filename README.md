@@ -3,7 +3,7 @@
 **Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: What's Hot
-- Time spent: 5 hours
+- Time spent: 3 hours
 - URL: **Insert your Heroku URL here**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
@@ -12,21 +12,21 @@
 The following **required** functionality is complete:
 
 * [ ] Implement required user stories
-* [ ] 10 model tests, 2 route tests, 2 controller tests, 2 view tests.
+* [x] 10 model tests, 2 route tests, 2 controller tests, 2 view tests.
 
 The person with best test coverage will win a small present from the instructor :)
 
 #### Events
 
-* [ ] Users can see a list of upcoming events. Past events should not be shown.
+* [x] Users can see a list of upcoming events. Past events should not be shown.
     * **HINT**: Good candidate for a test. You can write test first --> fail --> fast similar to demo
     * Suggestions:
         * Implement `/upcoming` route test to go to 'events#index'
         * Implement `Event.upcoming` class method (with a test)
         * Implement `EventsController#index` action test
-* [ ] Users can search for events from the homepage.
-* [ ] Users can click on an event to see details about the event.
-* [ ] Users can click on "Book Now" to go to a page to purchase tickets.
+* [x] Users can search for events from the homepage.
+* [x] Users can click on an event to see details about the event.
+* [x] Users can click on "Book Now" to go to a page to purchase tickets.
 
 #### Tickets
 

@@ -1,63 +1,20 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/models/event_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        4,
-        4,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/controllers/events_controller_spec.rb": [
         1,
         null,
         1,
         null,
-        null,
-        1,
         1,
         2,
-        null,
-        2,
-        null,
-        null,
         1,
         1,
         null,
-        1,
         null,
         null,
-        1,
-        1,
-        1,
         null,
-        1,
+        null,
         null,
         null,
         null,
@@ -618,6 +575,8 @@
         1,
         null,
         1,
+        null,
+        1,
         1,
         null,
         null,
@@ -691,6 +650,24 @@
         1,
         null
       ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/controllers/events_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
       "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/event.rb": [
         1,
         1,
@@ -702,23 +679,15 @@
         null,
         null,
         1,
-        2,
+        1,
         null,
-        null
-      ],
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/venue.rb": [
+        null,
         1,
-        1,
-        1,
-        null
-      ],
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/category.rb": [
-        1,
-        1,
-        1,
+        0,
+        null,
         null
       ]
     },
-    "timestamp": 1498751386
+    "timestamp": 1498755185
   }
 }

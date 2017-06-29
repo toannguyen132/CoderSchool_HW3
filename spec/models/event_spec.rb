@@ -36,7 +36,7 @@ RSpec.describe Event, type: :model do
     expect(eventB.errors[:name]).to eq ["has already been taken"]
   end
 
-  describe ".comming_event" do
+  describe ".upcoming" do
     before do
       @event = Event.create(starts_at: 10.days.from_now)
       
@@ -44,16 +44,31 @@ RSpec.describe Event, type: :model do
     end
 
     it "Display all comming events" do
-      events = Event.comming_events
+      events = Event.upcoming
 
       expect(events).to eq [@event]
     end
 
     it "Don't display past event" do
       past_event = Event.create(starts_at: 10.days.ago)
-      events = Event.comming_events
+      events = Event.upcoming
 
       expect(events).to eq [@event]
+    end
+  end
+
+  describe ".search" do
+    before do
+      @event_a = Event.new(name: "event a")
+      @event_a.save(validate: false)
+      @event_b = Event.new(name: "event b")
+      @event_a.save(validate: false)
+    end
+
+    it "return related event when searching" do
+      searched_events = Event.search("event a")
+
+      expect(searched_events).to eq([@event_a])
     end
   end
 

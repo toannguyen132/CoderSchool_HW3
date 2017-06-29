@@ -7,7 +7,11 @@ class Event < ActiveRecord::Base
   validates_uniqueness_of :name, uniqueness: {scope: [:venue, :starts_at]}
 
 
-  def self.comming_events
+  def self.upcoming
     where("starts_at > ?", Time.now).order(starts_at: :asc )
+  end
+
+  def self.search(search_term)
+    where("name ILIKE ?", "%#{search_term}%")
   end
 end
