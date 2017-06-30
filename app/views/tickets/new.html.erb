@@ -21,27 +21,36 @@
 
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-11 col-md-offset-1">  
-      <table class="table">
-        <th> Ticket Type </th>
-        <th> Unit Price </th>
-        <th> Quantity </th>
-      
-        <% @event.ticket_types.each do |type| %>
-        <tr>
-          <td> <%= type.name %> </td>
-          <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
-          <td> <%= select_tag('quantity', options_for_select(0..10)) %></td> 
-        </tr>
-        <% end %> 
-      </table>
+  <%= form_for(@order, :url => event_tickets_path, :method => 'post') do |f| %>
+    <div class="row">
+      <div class="col-md-11 col-md-offset-1">  
+        <table class="table">
+          <th> Ticket Type </th>
+          <th> Unit Price </th>
+          <th> Quantity </th>
+        
+          <% @event.ticket_types.each_with_index do |type, index| %>
+            <%= f.fields_for :order_items, @order.order_items.build do |item| %>
+              <tr>
+                <td> 
+                  <%= type.name %> 
+                  <%= item.hidden_field :ticket_type_id, value: type.id %>
+                </td>
+                <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
+                <td> 
+                  <%= item.select :quantity, options_for_select(0..10) %>
+                </td> 
+              </tr>
+            <% end %>
+          <% end %> 
+        </table>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2 col-md-offset-5">
-      <button class="btn btn-success btn-lg btn-block"> Buy </button>
-    </div>
-  <div>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-5">
+        <button type="submit" class="btn btn-success btn-lg btn-block"> Buy </button>
+      </div>
+    <div>
+  <% end %>
 </div>  
 
