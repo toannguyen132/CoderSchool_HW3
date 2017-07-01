@@ -3,7 +3,7 @@
 **Name of your app** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
 - Submitted by: What's Hot
-- Time spent: 3 hours
+- Time spent: 5 hours
 - URL: **Insert your Heroku URL here**
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
@@ -31,7 +31,7 @@ The person with best test coverage will win a small present from the instructor 
 #### Tickets
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`.
-* [ ] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
+* [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
 * [ ] Users cannot buy more tickets than the quantity available.
 * [ ] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
 

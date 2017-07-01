@@ -17,12 +17,11 @@
       <div class="time-details"> 
         <%= @event.starts_at.strftime('%A, %d %b %Y %l:%M %p') %> 
       </div>
-
-
     </div>
   </div>
   <%= form_for(@order, :url => event_tickets_path, :method => 'post') do |f| %>
     <div class="row">
+      <%= flash_message %>
       <div class="col-md-11 col-md-offset-1">  
         <table class="table">
           <th> Ticket Type </th>

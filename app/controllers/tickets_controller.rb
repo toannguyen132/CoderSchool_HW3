@@ -12,16 +12,32 @@ class TicketsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     byebug
-    @order = Order.create()
-    @order.save
-    order_params[:order_items_attributes].each do |k, v|
-      order_item = OrderItem.new(v)
-      order_item.order = @order
-      order_item.save
-      puts @order.id
+    Order.transaction do 
+      @order = Order.create!()
+      count = 0
+      order_params[:order_items_attributes].each do |k, v|
+        next if v['quantity'] == 0
+        order_item = OrderItem.new(v)
+        order_item.order = @order
+        if order_item.save!
+          count+=1
+        else
+          raise ActiveRecord::Rollback, "There is error while purchasing ticket"
+        end
+      end
+      if count == 0 
+        raise ActiveRecord::Rollback, "No ticket has been purchase!"
+      else 
+        @order.save!
     end
+    flash[:success] = "Tickets have been purchase successfully"
+    redirect event_path(@event)
 
-    render :new
+    rescue Exception => ex
+      byebug
+      flash[:error] = ex
+      render :new
+    end
   end
 
   private 
