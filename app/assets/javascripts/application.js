@@ -15,4 +15,6 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require bootstrap-datepicker
+//= require vue
 //= require_tree .

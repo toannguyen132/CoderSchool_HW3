@@ -1,0 +1,109 @@
+<%= form_for @event do |f| %>
+  <div class="box" id="new_events">
+    <div class="row">
+      <div class="col-md-6">
+        <h4 class="heading-section">Event</h4>
+        <div class="form-group">
+          <label>Name</label>
+          <%= f.text_field :name, placeholder: "Enter the event name", class: 'form-control' %>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Start Date</label>
+              <%= text_field_tag :start_date, @start_date, {placeholder: "Where does the event start?", class: 'form-control datepicker'} %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Time</label>
+              <%= select_tag :start_time, options_for_select(time_options, @start_time), class: 'form-control'%>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Ends Date</label>
+              <%= text_field_tag :end_date, @end_date, {placeholder: "Where does the event end?", class: 'form-control datepicker'} %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Time</label>
+              <%= select_tag :end_time, options_for_select(time_options, @end_time), class: 'form-control'%>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <%= f.select :category_id, options_for_select(@categories.map{|r| [r.name, r.id]}, @event.category ? @event.category.id : nil ), {:prompt => "Select"}, {class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <%= f.text_field :hero_image_url, placeholder: "Enter the image URL", class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <%= f.text_area :extended_html_description, {placeholder: "Enter html description", class: 'form-control'} %>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h4 class="heading-section">Venue</h4>
+        <div class="form-group">
+          <label>Choose from list</label>
+          <%= select_tag :venue_id, options_for_select(@venues.map{|r| [r.name, r.id]}, @event.venue ? @event.venue.id : nil), {:include_blank => "Create one", class: 'form-control', 'v-on:change': 'venueUpdate'} %>
+        </div>
+        <div v-if="should_create">
+          <div class="form-group">
+            <label>Name</label>
+            <%= text_field :venue, :name, placeholder: "Enter the venue name", class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <%= text_field :venue, :full_address, placeholder: "Enter the venue address", class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <label>Region</label>
+            <%= select :venue, :region_id, options_for_select(@regions.map{|r| [r.name, r.id] }), {}, {class: 'form-control'} %>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4 class="heading-section">Tickets <a v-on:click="addTicket" class="btn btn-secondary btn-sm">Add Ticket Type</a></h4>
+        <div class="ticket" v-for="(t, index) in ticket_types">
+          <h5>Ticket #{{index + 1}}</h5>
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" v-bind:name="`ticket_types[${index}][name]`" v-bind:value="t.name" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+              <div class="form-group">
+                <label>Price</label>
+                <input type="number" v-bind:name="`ticket_types[${index}][price]`" v-bind:value="t.price" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-6">
+              <div class="form-group">
+                <label>Max Quantity</label>
+                <input type="number" v-bind:name="`ticket_types[${index}][max_quantity]`" v-bind:value="t.max_quantity" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= button_tag "Sign Up", class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
+  </div>
+  <script>
+    var venue = <%= @event.venue ? @event.venue.id : 0 %>;
+    var ticket_types = <%= @event.ticket_types.any? ? @event.ticket_types.to_json.html_safe : [].to_json.html_safe %>;
+  </script>
+<% end %>

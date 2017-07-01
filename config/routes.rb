@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+
   root 'events#index'
 
-  get 'upcoming', to: "events#index"
+  get 'upcoming', to: 'events#index'
+  get 'register', to: 'users#new'
+  get 'login', to: 'sessions#new'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
 
   resources :events do
     resources :tickets
+    get 'mine', to: 'events#mine', on: :collection
+    post 'publish', to: 'events#publish'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

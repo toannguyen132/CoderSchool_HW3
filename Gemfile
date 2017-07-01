@@ -33,9 +33,11 @@ source 'https://rails-assets.org' do
 end
 
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'font-kit-rails', '~> 1.2.0'
+gem 'vuejs-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -45,6 +47,7 @@ gem 'font-kit-rails', '~> 1.2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'faker'
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'simplecov', '~> 0.12.0', require: false

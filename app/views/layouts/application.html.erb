@@ -3,7 +3,6 @@
 <head>
   <title>CsTemplate</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -14,16 +13,27 @@
       <li class="nav-item">
         <%= link_to 'Upcoming Events', upcoming_path, class: 'nav-link'  %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Log In</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
-      </li>
+      <% unless logged_in? %>
+        <li class="nav-item">
+          <%= link_to "Log In", login_path, class: "nav-link"  %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", register_path, class: "nav-link"  %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Create Event", new_event_path, class: "nav-link"  %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Events", mine_events_path, class: "nav-link"  %>
+        </li>
+      <% end %>
     </ul>
   </header>  
+  <%= flash_message %>
 
 <%= yield %>
 
+  <%= javascript_include_tag 'application'%>
 </body>
 </html>

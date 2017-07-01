@@ -32,14 +32,14 @@ The person with best test coverage will win a small present from the instructor 
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`.
 * [x] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
-* [ ] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
+* [x] Users cannot buy more tickets than the quantity available.
+* [x] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
 
 #### Users
 
-* [ ] User can sign up by providing their email, password, and name.
-* [ ] User can login using an email and password.
-* [ ] Users can create events.
+* [x] User can sign up by providing their email, password, and name.
+* [x] User can login using an email and password.
+* [x] Users can create events.
 * [ ] Users must click "publish event" before an event becomes viewable to other users.
     * **HINT**: use `published_at:datetime` and `Event.published` scope (class method)
     * Suggestions:

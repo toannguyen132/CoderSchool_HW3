@@ -1,5 +1,6 @@
 /*
  *= require font-kit-rails/open-sans
+ *= require bootstrap-datepicker
 */
 
 @import "bootstrap";
@@ -8,12 +9,17 @@
 @import "nav";
 @import "events";
 @import "tickets";
+@import "sessions";
 
 body {
   font-family: 'Open Sans';
+  background-color: #fafafa;
 }
 .btn.btn-danger {
   background-color: rgb(216, 87, 66);
   border: 2px solid rgb(241, 112, 91);
 }
 
+h1{
+  margin-top: 50px;
+}

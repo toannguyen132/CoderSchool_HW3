@@ -1,0 +1,26 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box{
+  &-box-sm{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px 0 rgba(0,0,0,0.1);
+}
+
+.alert-global{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  border-radius: 0;
+  z-index: 999;
+}

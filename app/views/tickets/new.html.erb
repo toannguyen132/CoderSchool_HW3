@@ -28,7 +28,7 @@
           <th> Unit Price </th>
           <th> Quantity </th>
         
-          <% @event.ticket_types.each_with_index do |type, index| %>
+          <% @event.ticket_types.each do |type| %>
             <%= f.fields_for :order_items, @order.order_items.build do |item| %>
               <tr>
                 <td> 
@@ -47,7 +47,7 @@
     </div>
     <div class="row">
       <div class="col-md-2 col-md-offset-5">
-        <button type="submit" class="btn btn-success btn-lg btn-block"> Buy </button>
+        <%= button_tag "Buy", class: 'btn btn-success btn-lg btn-block' %>
       </div>
     <div>
   <% end %>

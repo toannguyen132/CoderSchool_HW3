@@ -1,0 +1,22 @@
+<div class="hero">
+  <h1 class="text-center">My Events</h1>
+</div>
+<div class="container">
+  <div class="my-events">
+    <% @events.each do |e| %>
+      <div class="event-item">
+        <div class="info">
+          <h3 class="name"><%= e.name  %> <%= "[Unpublic]" unless e.is_public %></h3>
+          <p class="time"><%= e.starts_at.strftime('%k:%M %b %-d, %Y') %></p>
+          <p class="category"><%= e.category.name %></p>
+        </div>
+        <div class="controls">
+          <% unless e.is_public %>
+            <%= link_to "Publish", event_publish_path(e), method: 'post', class: 'btn btn-primary' %>
+          <% end %>
+          <%= link_to "Edit", edit_event_path(e), class: 'btn btn-secondary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
