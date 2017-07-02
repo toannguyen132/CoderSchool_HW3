@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Your account has been created, now you can log in"
-      redirect_to new_session_path
+      redirect_to login_path
     else
-      flash[:error].now = "There are errors occurred, please check your provided information"
-      render new
+      flash.now[:error] = "There are errors occurred, please check your provided information"
+      render :new
     end
   end
 

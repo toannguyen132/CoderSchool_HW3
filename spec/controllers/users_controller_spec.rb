@@ -9,11 +9,17 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
+      post :create, { user: { name: "test", email: 'toan@gmail.comn', 'password': '123', 'password_confirmation': '123'} }
+      expect(response).to redirect_to(controller: :sessions, action: :new)
+    end
+
+    it "Display errors if create user failed" do
+      post :create, { user: { name: "test", email: 'toan@gmail.comn', 'password': '123', 'password_confirmation': '123123'} }
+      expect(response).to render_template(:new)
     end
   end
+
 
 end
