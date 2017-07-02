@@ -6,11 +6,35 @@ header.navbar {
   a{
     color: #fff;
   }
+
   .navbar-nav{
     display: flex;
     flex-flow: row;
     li{
       padding: 0 15px;
+    }
+  }
+
+  .navbav-sections{
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
+  .dropdown-menu{
+    overflow: hidden;
+    padding: 0;
+    li{
+      padding: 0;
+    }
+    a{
+      color: #333;
+      padding: 6px 15px;
+      &:hover{
+        background-color: #FB7E16;
+        color: #fff;
+      }
     }
   }
 }
