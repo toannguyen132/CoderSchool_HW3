@@ -72,4 +72,24 @@ RSpec.describe Event, type: :model do
     end
   end
 
+  describe "#have_enough_ticket_types?" do
+    before do
+      @event = Event.new
+    end
+
+    it "return false if there is no ticket event" do
+      expect(@event.have_enough_ticket_types?).to eq false
+    end
+
+    it "return false if all tickets have 0 max quantity" do
+      @event.ticket_types.build(max_quantity: 0) 
+      expect(@event.have_enough_ticket_types?).to eq false
+    end
+
+    it "return true if there is no ticket event" do
+      @event.ticket_types.build(max_quantity: 10)
+      expect(@event.have_enough_ticket_types?).to eq true
+    end
+  end
+
 end

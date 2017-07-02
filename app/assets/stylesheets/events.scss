@@ -54,8 +54,7 @@
 }
 
 .events-list {
-  margin-top: 20px;
-  padding: 30px 150px;
+  padding: 30px 150px 30px 150px;
   background-color: $gray-lighter;
   .card {
     margin-bottom: 20px;
@@ -80,12 +79,19 @@
 .events-detail {
   display: flex;
   align-items: stretch;
+  > .row{
+    width: 100%;
+  }
   .sidebar {
     padding-top: 80px;
     color: rgb(233, 237, 240);
     background-color: #303B46;
     min-height: 700px;
     height: 100%;
+    h1{
+      text-align: center;
+      font-weight: bold;
+    }
     p {
       text-align: center;
       text-transform: uppercase;
@@ -96,8 +102,6 @@
       }
     }
     .ticket-list {
-      padding-left: 40px;
-      padding-right: 40px;
       font-size: 14px;
       button {
         margin-top: 40px;
@@ -123,6 +127,7 @@
     }
     .hero-img {
       min-height: 400px;
+      background-position: center;
     }
     .container {
       padding: 50px 30px;
@@ -140,7 +145,6 @@
     }
   }
 }
-
 
 .my-events{
   max-width: 750px;
@@ -164,6 +168,57 @@
       font-size: 18px;
       text-transform: uppercase;
       font-weight: 700;
+    }
+  }
+}
+
+.card-event{
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    opacity: 0.5;
+    transition: all 500ms;
+  }
+
+  &:hover:before{
+    opacity: 1;
+  }
+  .card-date{
+    position: absolute;
+    top: 0;
+    left: 15px;
+    background-color: #FB7E16;
+    color: #fff;
+    padding: 7px 15px;;
+    text-align: center;
+    big{
+      line-height: 1em;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  .card-block{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    .card-title{
+      margin-bottom: 0;
     }
   }
 }

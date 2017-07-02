@@ -17,6 +17,7 @@
           <div class="col-6">
             <div class="form-group">
               <label>Time</label>
+              <%= @start_time %>
               <%= select_tag :start_time, options_for_select(time_options, @start_time), class: 'form-control'%>
             </div>
           </div>
@@ -76,24 +77,24 @@
       <div class="col">
         <h4 class="heading-section">Tickets <a v-on:click="addTicket" class="btn btn-secondary btn-sm">Add Ticket Type</a></h4>
         <div class="ticket" v-for="(t, index) in ticket_types">
-          <h5>Ticket #{{index + 1}}</h5>
+          <h5>Ticket #{{index + 1}} <a class="btn btn-link btn-sm" role="button" v-on:click="removeTicket(index, ticket_types)">Remove</a></h5>
           <div class="row">
             <div class="col-md-6 col-xs-12">
               <div class="form-group">
                 <label>Name</label>
-                <input type="text" v-bind:name="`ticket_types[${index}][name]`" v-bind:value="t.name" class="form-control">
+                <input type="text" v-bind:name="`ticket_types[${index}][name]`" v-model="t.name" class="form-control">
               </div>
             </div>
             <div class="col-md-3 col-xs-6">
               <div class="form-group">
                 <label>Price</label>
-                <input type="number" v-bind:name="`ticket_types[${index}][price]`" v-bind:value="t.price" class="form-control">
+                <input type="number" v-bind:name="`ticket_types[${index}][price]`" v-model="t.price" class="form-control">
               </div>
             </div>
             <div class="col-md-3 col-xs-6">
               <div class="form-group">
                 <label>Max Quantity</label>
-                <input type="number" v-bind:name="`ticket_types[${index}][max_quantity]`" v-bind:value="t.max_quantity" class="form-control">
+                <input type="number" v-bind:name="`ticket_types[${index}][max_quantity]`" v-model="t.max_quantity" class="form-control">
               </div>
             </div>
           </div>
@@ -103,7 +104,7 @@
     </div>
   </div>
   <script>
-    var venue = <%= @event.venue ? @event.venue.id : 0 %>;
-    var ticket_types = <%= @event.ticket_types.any? ? @event.ticket_types.to_json.html_safe : [].to_json.html_safe %>;
+    var venue = <%= @venue.id.present? ? @venue.id : 0 %>;
+    var ticket_types = '<%= @event.ticket_types.any? ? @event.ticket_types.to_json.html_safe : [{name: "asdas", price: "100000", max_quanlity: 10}].to_json.html_safe %>';
   </script>
 <% end %>

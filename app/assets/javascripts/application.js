@@ -18,3 +18,4 @@
 //= require bootstrap-datepicker
 //= require vue
 //= require_tree .
+//= require lodash

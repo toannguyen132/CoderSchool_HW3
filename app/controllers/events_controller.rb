@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :require_auth, only: [:new]
+  before_action :initialize_options, only: [:new, :edit, :create, :update, ]
 
   def index
     @events = params[:search].present? ? Event.search(params[:search]).upcoming.published : Event.upcoming.published
@@ -12,9 +13,6 @@ class EventsController < ApplicationController
   def new
     @event = Event.new(name: "Sample Name", hero_image_url: 'https://media.ticketbox.vn/eventcover/2015/12/11/C68636.jpg?w=1040&maxheight=400&mode=crop&anchor=topcenter')
     @venue = Venue.new(name: "Da Lat", full_address: "Ngoc Phat Hotel 10 Hồ Tùng Mậu Phường 3, Thành phố Đà Lạt, Lâm Đồng, Thành Phố Đà Lạt, Lâm Đồng")
-    @regions = Region.all
-    @categories = Category.all
-    @venues = Venue.all
 
     # date
     @start_date = Date.tomorrow.strftime('%d/%m/%Y')
@@ -25,24 +23,23 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+
+    if @event.user_id != current_user.id
+      return redirect_to root_path 
+    end
+
     @venue = Venue.new(name: "Da Lat", full_address: "Ngoc Phat Hotel 10 Hồ Tùng Mậu Phường 3, Thành phố Đà Lạt, Lâm Đồng, Thành Phố Đà Lạt, Lâm Đồng")
-    @regions = Region.all
-    @categories = Category.all
-    @venues = Venue.all
 
     # date
-    @start_date = @event.starts_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%d/%m/%Y')
-    @start_time = @event.starts_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%H:%M')
+    @start_date = @event.local_starts_at.strftime('%d/%m/%Y')
+    @start_time = @event.local_starts_at.strftime('%H:%M')
     @end_date = @event.ends_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%d/%m/%Y')
     @end_time = @event.ends_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%H:%M')
   end
 
   def create
     @event = Event.new(event_params)
-    @venue = Venue.new(venue_params)
-    @regions = Region.all
-    @categories = Category.all
-    @venues = Venue.all
+    @venue = get_venue_or_create
 
     # date
     @start_date = params[:start_date]
@@ -59,15 +56,17 @@ class EventsController < ApplicationController
 
     # validate
     begin
-      if @venue.invalid?
+      if params[:venue_id].empty? && @venue.invalid?
         raise @venue.errors.full_messages.to_sentence
       elsif @event.invalid?
         raise @event.errors.full_messages.to_sentence
+      elsif is_ticket_empy?
+        raise "You have add at least one ticket types with max quantity greater than 0"
       end
 
       # create venue
       Event.transaction do
-        @venue.save
+        @venue.save if @venue.new_record?
 
         #ticket
         params[:ticket_types].each do |k, v|
@@ -86,8 +85,24 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+    @venue = get_venue_or_create
+
+    # assign time
+    @start_date = @event.starts_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%d/%m/%Y')
+    @start_time = @event.starts_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%H:%M')
+    @end_date = @event.ends_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%d/%m/%Y')
+    @end_time = @event.ends_at.in_time_zone('Asia/Ho_Chi_Minh').strftime('%H:%M')
+
+    if is_ticket_empy?
+      flash[:error] = "You have add at least one ticket types with max quantity greater than 0" 
+      return render :edit
+    elsif params[:venue].present? && @venue.invalid?
+      flash[:error] = "Venue " + @venue.errors.full_messages.to_sentence
+      return render :edit
+    end
 
     begin
+
       Event.transaction do
         # byebug
         @event.assign_attributes(event_params)
@@ -95,6 +110,8 @@ class EventsController < ApplicationController
         @event.assign_attributes(ends_at: end_date_value)
 
         # venue
+        @venue.save if @venue.new_record?
+        @event.venue = @venue
 
         # ticket
         params[:ticket_types].each do |k, v|
@@ -124,6 +141,12 @@ class EventsController < ApplicationController
 
   def publish
     @event = Event.find(params[:event_id])
+
+    unless @event.have_enough_ticket_types?
+      flash[:error] = "Event must have at lease one ticket type"
+      return redirect_to :mine_events
+    end
+
     @event.is_public = true
     if @event.save
       flash[:success] = "Event public successfully"
@@ -136,6 +159,11 @@ class EventsController < ApplicationController
 
 
   private
+  def initialize_options
+    @regions = Region.all
+    @categories = Category.all
+    @venues = Venue.all
+  end
   def event_params
     params.require(:event).permit(:name, :category_id, :extended_html_description, :hero_image_url)
   end
@@ -152,6 +180,9 @@ class EventsController < ApplicationController
     "#{params[:end_date]} #{params[:end_time]}".to_time
   end
   def get_venue_or_create
-    venue = params[:venue]
+    venue = params[:venue_id].empty? && params[:venue].present? ? Venue.new(venue_params) : Venue.find_by_id(params[:venue_id])
+  end
+  def is_ticket_empy?
+    params[:ticket_types].select{|k,v| v[:max_quantity].to_i > 0}.empty?
   end
 end

@@ -9,6 +9,10 @@ RSpec.describe "route for events", :type => :routing do
       expect(:get => upcoming_path).to route_to('events#index')
     end
 
+    it "should render mine " do
+      expect(:get => mine_events_path).to route_to('events#mine')
+    end
+
   # end
 
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'upcoming', to: 'events#index'
   get 'register', to: 'users#new'
   get 'login', to: 'sessions#new'
+  delete 'logout', to: 'sessions#destroy'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]

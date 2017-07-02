@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .box{
-  &-box-sm{
+  &-sm{
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -16,11 +16,13 @@
 }
 
 .alert-global{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
   padding: 15px;
   border-radius: 0;
-  z-index: 999;
+  // z-index: 999;
+  text-align: center;
+  margin-bottom: 0;
 }

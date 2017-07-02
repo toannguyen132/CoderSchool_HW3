@@ -7,7 +7,7 @@ module ApplicationHelper
   def flash_message
     flash.map do |msg_type, message|
       content_tag('div', class: "alert alert-global #{flash_class(msg_type)}") do
-        content_tag('button', 'x'.html_safe, {class: 'close', 'data-dismiss': 'alert'} ) + message
+        content_tag('button', '<i class="fa fa-remove"></i>'.html_safe, {class: 'close', 'data-dismiss': 'alert'} ) + message
       end
     end.join.html_safe
   end

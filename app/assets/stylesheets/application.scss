@@ -1,8 +1,7 @@
 /*
- *= require font-kit-rails/open-sans
  *= require bootstrap-datepicker
 */
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
 @import "bootstrap";
 @import "font-awesome";
 @import "col-helpers";
@@ -12,7 +11,7 @@
 @import "sessions";
 
 body {
-  font-family: 'Open Sans';
+  font-family: 'Roboto', sans-serif;;
   background-color: #fafafa;
 }
 .btn.btn-danger {

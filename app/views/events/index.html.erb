@@ -2,12 +2,13 @@
   <div class="container">
     <h2> Discover upcoming events </h2>
     <form>
-      <input type="text" class="form-control" name="search" placeholder="Search for events, shows, courses...">
+      <%= text_field_tag :search, params[:search] ,placeholder: 'Search for events, shows, courses...', class: 'form-control'%>
     </form>
   </div>
 </div>
-<div class="container-fluid events-list">
-    <% @events.in_groups_of(3) do |g| %>
+<div class="events-list">
+  <div class="container">
+    <% @events.in_groups_of(2) do |g| %>
       <div class="row">
         <% g.compact.each do |e| %>
             <%= render partial: 'card', locals: {event: e} %>

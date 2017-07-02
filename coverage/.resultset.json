@@ -1,21 +1,26 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/controllers/events_controller_spec.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/views/users/new.html.erb_spec.rb": [
         1,
         null,
         1,
         null,
         1,
         2,
+        2,
+        null,
+        null,
         1,
         1,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null
@@ -572,10 +577,19 @@
       ],
       "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/config/routes.rb": [
         1,
-        1,
         null,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
         1,
         1,
         null,
@@ -637,6 +651,31 @@
       ],
       "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/application_helper.rb": [
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
         null
       ],
       "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/events_helper.rb": [
@@ -646,48 +685,32 @@
         null,
         null
       ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
       "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/tickets_helper.rb": [
         1,
         null
       ],
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/controllers/events_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/event.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/user.rb": [
         1,
         1,
         1,
         1,
-        null,
+        1,
+        null
+      ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/application_record.rb": [
         1,
         1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
         null
       ]
     },
-    "timestamp": 1498755185
+    "timestamp": 1498981912
   }
 }

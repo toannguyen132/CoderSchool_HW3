@@ -7,7 +7,7 @@
       <div class="event-item">
         <div class="info">
           <h3 class="name"><%= e.name  %> <%= "[Unpublic]" unless e.is_public %></h3>
-          <p class="time"><%= e.starts_at.strftime('%k:%M %b %-d, %Y') %></p>
+          <p class="time"><%= e.local_starts_at.strftime('%k:%M %b %-d, %Y') %></p>
           <p class="category"><%= e.category.name %></p>
         </div>
         <div class="controls">
