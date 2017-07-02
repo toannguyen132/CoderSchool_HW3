@@ -1,26 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
         null,
         1,
-        2,
-        2,
-        null,
-        null,
         1,
         1,
+        1,
+        null,
         null,
         null,
         1,
         1,
         1,
-        1,
-        1,
-        1,
+        0,
+        null,
         null,
         null,
         null
@@ -697,6 +694,54 @@
         1,
         null
       ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/mac/Work/Playground/ruby/workspace/CoderTicket/app/models/user.rb": [
         1,
         1,
@@ -711,6 +756,6 @@
         null
       ]
     },
-    "timestamp": 1498981912
+    "timestamp": 1498984926
   }
 }

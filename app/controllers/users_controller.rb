@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new(name: Faker::Name.name, email: Faker::Internet.email)
+    @user = User.new
   end
 
   def create
