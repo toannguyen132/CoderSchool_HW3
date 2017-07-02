@@ -2,9 +2,9 @@
 
 **Fast Booking** is a Ruby on Rails application that allows users to create and buy tickets to cool events.
 
-- Submitted by: What's Hot
+- Submitted by: Toan Nguyen
 - Time spent: 18 hours
-- URL: **Insert your Heroku URL here**
+- URL: [https://cs-toan-hw-3.herokuapp.com/](https://cs-toan-hw-3.herokuapp.com/)
 - SimpleCov Test Coverage: [coverage/index.html](coverage/index.html)
 
 ## User Stories
